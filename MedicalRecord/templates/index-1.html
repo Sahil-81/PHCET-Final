@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>     
+<html>
+<head>
+	<title>Medical Records</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		
+		.card {
+			background-color: white;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			padding: 20px;
+			margin: 20px;
+			width: 400px;
+			height: 200px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		.card h2 {
+			font-size: 20px;
+			margin-top: 0px;
+		}
+		
+		.card p {
+			font-size: 14px;
+			margin-top: 10px;
+		}
+
+		.card span {
+			display: block;
+			font-size: 14px;
+			margin-top: 5px;
+			font-weight: bold;
+		}
+
+		.card a {
+			display: block;
+			margin-top: 10px;
+		}
+              /* CSS styles for the page */
+      /* body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+       */
+      #header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+      
+      #header h1 {
+        margin: 0;
+        font-size: 32px;
+        text-align: center;
+      }
+      
+      #doctor-list, #research-companies {
+        width: 45%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px;
+      }
+      
+      #doctor-list h2, #research-companies h2 {
+        margin-top: 0;
+        font-size: 24px;
+        text-align: center;
+      }
+      
+      #records {
+        margin: 20px;
+      }
+      
+      #records h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      
+      th {
+        background-color: #333;
+        color: white;
+      }
+	</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="addDoctors.html">My Doctors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="myCampaigns.html">My Campaigns</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+	<div class="card">
+		<h2>Medical Record Title</h2>
+		<p>Medical Record Description</p>
+		<span>Upload Date: March 16, 2023</span>
+		<span>Doctor: Dr. John Doe</span>
+		<a href="#">View Medical Record</a>
+	</div>
+	
+	<div class="card">
+		<h2>Medical Record Title</h2>
+		<p>Medical Record Description</p>
+		<span>Upload Date: March 15, 2023</span>
+		<span>Doctor: Dr. Jane Smith</span>
+		<a href="#">View Medical Record</a>
+	</div>
+</body>
+</html>

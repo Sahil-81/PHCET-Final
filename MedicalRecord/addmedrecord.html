@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+	
+
+    form {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		input[type="text"],
+		input[type="file"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 15px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		textarea {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 15px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			resize: vertical;
+		}
+
+		select {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 15px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: #fff;
+		}
+
+		input[type="submit"] {
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #0062cc;
+		}
+
+	</style>
+    <title>Doctors List</title>
+  </head>
+  <body>
+
+
+
+    <form>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+      
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+      
+        <label for="doctor">Doctor:</label><br>
+        <input type="text" id="doctor" name="doctor"><br>
+      
+        <label for="date">Date Uploaded:</label><br>
+        <input type="date" id="date" name="date"><br>
+      
+        <label for="type">Type:</label><br>
+        <input type="text" id="type" name="type"><br>
+      
+        <label for="document">Document:</label><br>
+        <input type="text" id="document" name="document"><br><br>
+      
+        <input type="submit" value="Submit">
+      </form>
+  </body>
+</html>

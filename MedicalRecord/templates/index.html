@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      html,
+      body {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        place-items: center;
+        background: #f2f2f2;
+        /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+      }
+      ::selection {
+        background: #4158d0;
+        color: #fff;
+      }
+      .wrapper {
+        width: 380px;
+        height: 357px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 31px 39px rgb(0 0 0 / 56%);
+      }
+      .wrapper .title {
+        font-size: 25px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 85px;
+        color: #fff;
+        user-select: none;
+        border-radius: 15px 15px 0 0;
+        /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+        background: #003a55;
+      }
+      .wrapper form {
+        padding: 45px 30px 50px 30px;
+      }
+      .wrapper form .field {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+      }
+      .wrapper form .field input {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        font-size: 17px;
+        padding-left: 20px;
+        border: 1px solid lightgrey;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+      }
+      .wrapper form .field input:focus,
+      form .field input:valid {
+        border-color: #4158d0;
+      }
+      .wrapper form .field label {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        color: #999999;
+        font-weight: 400;
+        font-size: 17px;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+      }
+      form .field input:focus ~ label,
+      form .field input:valid ~ label {
+        top: 0%;
+        font-size: 16px;
+        color: #4158d0;
+        background: #fff;
+        transform: translateY(-50%);
+      }
+      form .content {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        align-items: center;
+        justify-content: space-around;
+      }
+      form .content .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      form .content input {
+        width: 15px;
+        height: 15px;
+        background: red;
+      }
+      form .content label {
+        color: #262626;
+        user-select: none;
+        padding-left: 5px;
+      }
+      form .content .pass-link {
+        color: "";
+      }
+      form .field input[type="submit"] {
+        color: #fff;
+        border: none;
+        padding-left: 0;
+        margin-top: -10px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        background: linear-gradient(-135deg, #c850c0, #4158d0);
+        transition: all 0.3s ease;
+      }
+      form .field input[type="submit"]:active {
+        transform: scale(0.95);
+      }
+      form .signup-link {
+        color: #262626;
+        margin-top: 20px;
+        text-align: center;
+      }
+      form .pass-link a,
+      form .signup-link a {
+        color: #4158d0;
+        text-decoration: none;
+      }
+      form .pass-link a:hover,
+      form .signup-link a:hover {
+        text-decoration: underline;
+      }
+
+      #Layer_1 {
+        height: 30px;
+        justify-content: center;
+        justify-items: center;
+      }
+
+      .metamask {
+        color: #fff;
+        border: none;
+        padding-left: 0;
+        margin-top: -10px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        background-image: linear-gradient(181deg, #003a55, #6b8dd6, #003a55);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        width: 100%;
+        height: 95%;
+      }
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">USER LOGIN</div>
+      <form action="{% url 'check_address' %}" method="POST">
+        {% csrf_token %}
+        <div class="field">
+          <!-- <img src="./img/metamask.jpg" alt="metamask"> -->
+
+          <input id="wallet_add" name="wallet_add" type="text" required>
+          <label class="text-center">Metamask Address</label>
+        </div>
+
+        <div class="field">
+          <button
+            class="metamask enableMMButton"
+            type="submit"
+            value="Connect Metamsk"
+          >
+            Connect Metamask
+            <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns:ev="http://www.w3.org/2001/xml-events"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 318.6 318.6"
+              style="enable-background: new 0 0 318.6 318.6"
+              xml:space="preserve"
+            >
+              <style type="text/css">
+                .st0 {
+                  fill: #e2761b;
+                  stroke: #e2761b;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st1 {
+                  fill: #e4761b;
+                  stroke: #e4761b;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st2 {
+                  fill: #d7c1b3;
+                  stroke: #d7c1b3;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st3 {
+                  fill: #233447;
+                  stroke: #233447;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st4 {
+                  fill: #cd6116;
+                  stroke: #cd6116;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st5 {
+                  fill: #e4751f;
+                  stroke: #e4751f;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st6 {
+                  fill: #f6851b;
+                  stroke: #f6851b;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st7 {
+                  fill: #c0ad9e;
+                  stroke: #c0ad9e;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st8 {
+                  fill: #161616;
+                  stroke: #161616;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+
+                .st9 {
+                  fill: #763d16;
+                  stroke: #763d16;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+              </style>
+              <polygon class="st0" points="274.1,35.5 174.6,109.4 193,65.8 " />
+              <g>
+                <polygon
+                  class="st1"
+                  points="44.4,35.5 143.1,110.1 125.6,65.8 	"
+                />
+                <polygon
+                  class="st1"
+                  points="238.3,206.8 211.8,247.4 268.5,263 284.8,207.7 	"
+                />
+                <polygon
+                  class="st1"
+                  points="33.9,207.7 50.1,263 106.8,247.4 80.3,206.8 	"
+                />
+                <polygon
+                  class="st1"
+                  points="103.6,138.2 87.8,162.1 144.1,164.6 142.1,104.1 	"
+                />
+                <polygon
+                  class="st1"
+                  points="214.9,138.2 175.9,103.4 174.6,164.6 230.8,162.1 	"
+                />
+                <polygon
+                  class="st1"
+                  points="106.8,247.4 140.6,230.9 111.4,208.1 	"
+                />
+                <polygon
+                  class="st1"
+                  points="177.9,230.9 211.8,247.4 207.1,208.1 	"
+                />
+              </g>
+              <g>
+                <polygon
+                  class="st2"
+                  points="211.8,247.4 177.9,230.9 180.6,253 180.3,262.3 	"
+                />
+                <polygon
+                  class="st2"
+                  points="106.8,247.4 138.3,262.3 138.1,253 140.6,230.9 	"
+                />
+              </g>
+              <polygon
+                class="st3"
+                points="138.8,193.5 110.6,185.2 130.5,176.1 "
+              />
+              <polygon class="st3" points="179.7,193.5 188,176.1 208,185.2 " />
+              <g>
+                <polygon
+                  class="st4"
+                  points="106.8,247.4 111.6,206.8 80.3,207.7 	"
+                />
+                <polygon
+                  class="st4"
+                  points="207,206.8 211.8,247.4 238.3,207.7 	"
+                />
+                <polygon
+                  class="st4"
+                  points="230.8,162.1 174.6,164.6 179.8,193.5 188.1,176.1 208.1,185.2 	"
+                />
+                <polygon
+                  class="st4"
+                  points="110.6,185.2 130.6,176.1 138.8,193.5 144.1,164.6 87.8,162.1 	"
+                />
+              </g>
+              <g>
+                <polygon
+                  class="st5"
+                  points="87.8,162.1 111.4,208.1 110.6,185.2 	"
+                />
+                <polygon
+                  class="st5"
+                  points="208.1,185.2 207.1,208.1 230.8,162.1 	"
+                />
+                <polygon
+                  class="st5"
+                  points="144.1,164.6 138.8,193.5 145.4,227.6 146.9,182.7 	"
+                />
+                <polygon
+                  class="st5"
+                  points="174.6,164.6 171.9,182.6 173.1,227.6 179.8,193.5 	"
+                />
+              </g>
+              <polygon
+                class="st6"
+                points="179.8,193.5 173.1,227.6 177.9,230.9 207.1,208.1 208.1,185.2 "
+              />
+              <polygon
+                class="st6"
+                points="110.6,185.2 111.4,208.1 140.6,230.9 145.4,227.6 138.8,193.5 "
+              />
+              <polygon
+                class="st7"
+                points="180.3,262.3 180.6,253 178.1,250.8 140.4,250.8 138.1,253 138.3,262.3 106.8,247.4 117.8,256.4 
+    140.1,271.9 178.4,271.9 200.8,256.4 211.8,247.4 "
+              />
+              <polygon
+                class="st8"
+                points="177.9,230.9 173.1,227.6 145.4,227.6 140.6,230.9 138.1,253 140.4,250.8 178.1,250.8 180.6,253 "
+              />
+              <g>
+                <polygon
+                  class="st9"
+                  points="278.3,114.2 286.8,73.4 274.1,35.5 177.9,106.9 214.9,138.2 267.2,153.5 278.8,140 273.8,136.4 
+      281.8,129.1 275.6,124.3 283.6,118.2 	"
+                />
+                <polygon
+                  class="st9"
+                  points="31.8,73.4 40.3,114.2 34.9,118.2 42.9,124.3 36.8,129.1 44.8,136.4 39.8,140 51.3,153.5 103.6,138.2 
+      140.6,106.9 44.4,35.5 	"
+                />
+              </g>
+              <polygon
+                class="st6"
+                points="267.2,153.5 214.9,138.2 230.8,162.1 207.1,208.1 238.3,207.7 284.8,207.7 "
+              />
+              <polygon
+                class="st6"
+                points="103.6,138.2 51.3,153.5 33.9,207.7 80.3,207.7 111.4,208.1 87.8,162.1 "
+              />
+              <polygon
+                class="st6"
+                points="174.6,164.6 177.9,106.9 193.1,65.8 125.6,65.8 140.6,106.9 144.1,164.6 145.3,182.8 145.4,227.6 
+    173.1,227.6 173.3,182.8 "
+              />
+            </svg>
+          </button>
+
+          <!-- <input type="submit" value="Connect Metamsk"> -->
+        </div>
+        <a href="{% url 'signup' %}">Signup Here</a>
+      </form>
+    </div>
+
+    <!-- Check Metamask Balance Button -->
+    {% block content %}
+    <div id="address-container">
+      <p id="address"></p>
+    </div>
+{% comment %} 
+    <button id="connect-button">Connect Metamask</button> {% endcomment %}
+
+    <script>
+      // Define a function to retrieve the current account address
+      function getCurrentAddress() {
+        // Access the Metamask injected web3 object
+        window.ethereum
+          .request({ method: "eth_accounts" })
+          .then(function (accounts) {
+            // Get the first account in the list (the current account)
+            var currentAddress = accounts[0];
+            // Display the current account address
+            document.getElementById("address").textContent = currentAddress;
+            // Send an AJAX request to the Django backend to save the address
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "{% url 'check_address' %}");
+            xhr.setRequestHeader(
+              "Content-Type",
+              "application/json;charset=UTF-8"
+            );
+            xhr.send(JSON.stringify({ address: currentAddress }));
+          });
+      }
+
+      // Attach an event listener to the Connect Metamask button
+      var connectButton = document.getElementById("connect-button");
+      connectButton.addEventListener("click", function () {
+        // Request the user to connect to Metamask
+        window.ethereum
+          .request({ method: "eth_requestAccounts" })
+          .then(function (accounts) {
+            // If the user connects, retrieve the current account address
+            getCurrentAddress();
+          });
+      });
+    </script>
+    {% endblock %}
+
+    <script type="text/javascript">
+      {% comment %} const ethereumButton = document.querySelector('.accountaddress'); {% endcomment %}
+      const ethereumButton = document.querySelector('.accountaddress');
+      const showAccount = document.querySelector('.showAccount');
+
+      ethereumButton.addEventListener('click', () => {
+          getAccount();
+      });
+
+      async function getAccount() {
+          const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+          const account = accounts[0];
+          showAccount.innerHTML = `Current wallet address: ` + account;
+      }
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script type="text/javascript">
+      const ethereumButton = document.querySelector(".enableMMButton");
+
+      ethereumButton.addEventListener("click", () => {
+        //Will Start the metamask extension
+        ethereum.request({ method: "eth_requestAccounts" });
+      });
+    </script>
+  </body>
+</html>
